@@ -7,8 +7,7 @@
 *.ctxt
 
 # IntelliJ
-.idea/workspace.xml
-.idea/tasks.xml
+.idea
 
 # Mobile Tools for Java (J2ME)
 .mtj.tmp/
