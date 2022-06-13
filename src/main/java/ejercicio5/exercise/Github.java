@@ -19,7 +19,7 @@ public class Github {
     }
 
     public Commit restoreCommit(String commitHash) {
-        repositorioNotificaciones.send("Se ha resturado el commit: " + commitHash);
+        repositorioNotificaciones.send("Se ha restaurado el commit: " + commitHash);
         return stateMap.get(commitHash);
     }
 

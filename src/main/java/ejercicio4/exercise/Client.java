@@ -30,7 +30,7 @@ public class Client {
                 .addToGroup(usuario9)
                 .addToGroup(usuario10);
 
-        usuario1.sendToGroup("Hola a todos");
+        usuario10.sendToGroup("Hola a todos");
     }
 
 }
