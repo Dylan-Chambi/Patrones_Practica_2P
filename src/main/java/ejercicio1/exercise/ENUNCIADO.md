@@ -1,4 +1,4 @@
-# Ejercicio 1 - Memento  
+# Ejercicio 1 - Memento/Prototype
 Se tiene un estudiante que está realizando su tesis, cada ocasión que lleva
 su document a revisión el guarda un estado de este para poder retornar a esa versión
 cuando el lo necesite, ya tiene 5 revisiones del tutor y esto quiere decir que tiene 5

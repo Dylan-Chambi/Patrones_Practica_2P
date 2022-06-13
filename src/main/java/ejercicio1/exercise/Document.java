@@ -1,12 +1,19 @@
 package ejercicio1.exercise;
 
-public class Document {
-    private String title;
-    private String content;
+import java.util.ArrayList;
+import java.util.List;
 
-    public Document(String title, String content) {
+public class Document implements IPrototype {
+    private String title;
+    private List<String> content;
+
+    public Document(String title) {
         this.title = title;
-        this.content = content;
+        this.content = new ArrayList<>();
+    }
+
+    public List<String> getContent() {
+        return content;
     }
 
     public String getTitle() {
@@ -17,16 +24,34 @@ public class Document {
         this.title = title;
     }
 
-    public String getContent() {
-        return content;
+    public Document addLine(String line){
+        content.add(line);
+        return this;
+    }
+    public Document addLine(int index, String line){
+        content.add(index, line);
+        return this;
     }
 
-    public void setContent(String content) {
-        this.content = content;
+    public Document removeLine(int lineNumber){
+        content.remove(lineNumber-1);
+        return this;
     }
 
     public void showInfo() {
-        System.out.println("tittle: " + title);
-        System.out.println("Content: " + content);
+        System.out.println("Tittle: " + title);
+        System.out.println("Content: ");
+        for (String line : content) {
+            System.out.println(line);
+        }
+    }
+
+    @Override
+    public Document clone() {
+        Document documentClone = new Document(title);
+        for(String line: content){
+            documentClone.addLine(line);
+        }
+        return documentClone;
     }
 }

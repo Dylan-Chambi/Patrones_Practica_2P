@@ -1,31 +1,42 @@
 package ejercicio1.exercise;
 
-import java.io.FileNotFoundException;
-
 public class Client {
-    public static void main(String[] args) throws FileNotFoundException {
+    public static void main(String[] args) {
         DocumentDatabase documentDatabase = new DocumentDatabase();
         Review review = new Review();
 
         Document document;
 
-        document = new Document("Thesis", "Introduction");
+        document = new Document("Thesis");
+        document.addLine("Title: Thesis");
+        document.addLine("Author: Dylan");
+        document.addLine("Year: 2022");
         review.setDocumentVersion(document);
         documentDatabase.addDocumentVersion(review.createDocumentVersion()); // 1
 
-        document = new Document("Thesis", "Introduction, Literature Review");
+        document.addLine("Introduction");
+        document.addLine("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~");
+        document.addLine("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~");
         review.setDocumentVersion(document);
         documentDatabase.addDocumentVersion(review.createDocumentVersion());  // 2
 
-        document = new Document("Thesis", "Introduction, Literature Review, Analysis");
+        document.addLine("Literature Review");
+        document.addLine("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~");
+        document.addLine("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~");
+        document.removeLine(6);
+        document.addLine(5, "bla bla bla bla bla bla bla bla bla bla bla.");
         review.setDocumentVersion(document);
         documentDatabase.addDocumentVersion(review.createDocumentVersion()); // 3
 
-        document = new Document("Thesis", "Introduction, Literature Review, Analysis, Results");
+        document.addLine("Analysis");
+        document.addLine("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~");
+        document.addLine("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~");
         review.setDocumentVersion(document);
         documentDatabase.addDocumentVersion(review.createDocumentVersion()); // 4
 
-        document = new Document("Thesis", "Introduction, Literature Review, Analysis, Results, Conclusion");
+        document.addLine("Results");
+        document.addLine("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~");
+        document.addLine("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~");
         review.setDocumentVersion(document);
         documentDatabase.addDocumentVersion(review.createDocumentVersion()); // 5
 
